@@ -14,7 +14,7 @@ return {
                 markdown = { 'markdown-toc', 'mdformat' },
                 python = { 'isort', 'black' }, -- replaces pylsp formatting (with autopep8/yapf)
                 tex = { 'latexindent' },
-                yaml = { 'yamlfix' },
+                -- yaml = { 'yamlfix' }, -- Changes too much in ours
                 ['*'] = { 'codespell' },
                 ['_'] = { 'trim_whitespace', 'squeeze_blanks' },
             },
@@ -23,5 +23,8 @@ return {
                 timeout_ms = 500,
             },
         })
+        require("conform").formatters.shfmt = {
+          prepend_args = { "-i", "2" },
+        }
     end,
 }
