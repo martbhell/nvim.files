@@ -23,5 +23,8 @@ return {
                 timeout_ms = 500,
             },
         })
+        require("conform").formatters.shfmt = {
+          prepend_args = { "-i", "2" },
+        }
     end,
 }
